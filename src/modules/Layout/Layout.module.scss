@@ -2,8 +2,9 @@
 
 .main-container {
   display: flex;
+  flex-flow: column wrap;
   max-width: $container-width;
-  min-height: calc(100vh - $footer-height);
+  height: 100vh;
   margin: 0 auto;
-  padding: calc($header-height + 10px) 10px 10px;
+  padding: calc($header-height + 10px) 24px 24px;
 }

@@ -8,7 +8,6 @@ export const Layout: FcWrapper = ({ children }) => {
     <>
       <Header />
       <div className={s['main-container']}>{children}</div>
-      <Footer />
     </>
   );
 };
