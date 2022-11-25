@@ -1,17 +1,22 @@
 import { useEffect, FC } from 'react';
-import { getData } from '../../utils/api';
-import { BASE_URL } from '../../data/constants';
+import { toast } from 'react-toastify';
+import { BASE_URL, RESP_DEFAULT, TOAST_TIMEOUT } from '../../data/constants';
 import s from './TablePage.module.scss';
+import { useGetDiagramQuery } from '../../store/diagramsApi';
 
 export const TablePage: FC = () => {
-  useEffect(() => {
-    const data = getData(BASE_URL);
-  }, []);
+  const { data = RESP_DEFAULT, isError } = useGetDiagramQuery('');
+
+  if (isError) {
+    toast.error('Request failed. Loaded mock data instead :-)', {
+      autoClose: TOAST_TIMEOUT,
+    });
+  }
 
   return (
-    <>
+    <div className={s['table-wrapper']}>
       <h2>Table Page</h2>
-      <div className={s['table-wrapper']}>Table Wrapper</div>
-    </>
+      <div style={{ whiteSpace: 'pre' }}>{JSON.stringify(data, null, 4)}</div>
+    </div>
   );
 };

@@ -9,8 +9,4 @@ if (!root) {
   throw Error('React root element is not defined.');
 }
 
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+root.render(<App />);
