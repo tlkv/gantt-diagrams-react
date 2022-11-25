@@ -1,0 +1,9 @@
+@use '../../styles/abstracts/variables' as *;
+
+.main-container {
+  display: flex;
+  max-width: $container-width;
+  min-height: calc(100vh - $footer-height);
+  margin: 0 auto;
+  padding: calc($header-height + 10px) 10px 10px;
+}
