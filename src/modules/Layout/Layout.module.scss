@@ -1,10 +1,10 @@
 @use '../../styles/abstracts/variables' as *;
 
-.main-container {
+.main_container {
   display: flex;
-  flex-flow: column wrap;
+  flex-wrap: wrap;
   max-width: $container-width;
   height: 100vh;
   margin: 0 auto;
-  padding: calc($header-height + 10px) 24px 24px;
+  padding: 16px $global-indent $global-indent;
 }

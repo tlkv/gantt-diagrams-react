@@ -8,12 +8,12 @@ export const DEFAULT_STATE: CounterState = {
 
 export const TOAST_TIMEOUT = 1500;
 
-export const RESP_DEFAULT: ChartData = {
-  project: 'DMS 2.0',
+export const RESP_MOCK: ChartData = {
+  project: 'DMS 2.0 MOCK',
   period: '02.09.2022-31.12.2022',
   chart: {
     id: 1,
-    title: 'Marketing Launch Mock',
+    title: 'Marketing Launch',
     period_start: '2022-09-02',
     period_end: '2022-09-08',
     sub: [

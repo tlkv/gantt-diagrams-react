@@ -8,7 +8,7 @@ export const CounterPage: FC = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className={s['counter-wrapper']}>
+    <div className={s.counter_wrapper}>
       <div>
         <div>{count}</div>
       </div>

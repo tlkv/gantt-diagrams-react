@@ -1,13 +1,13 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import countReducer from './reducers/countSlice';
-import { diagramsApi } from './diagramsApi';
+import { chartApi } from './chartApi';
 
 const store = configureStore({
   reducer: {
     count: countReducer,
-    [diagramsApi.reducerPath]: diagramsApi.reducer,
+    [chartApi.reducerPath]: chartApi.reducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(diagramsApi.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(chartApi.middleware),
 });
 
 export default store;

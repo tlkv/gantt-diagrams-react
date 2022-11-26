@@ -2,7 +2,7 @@
 
 // 7-1 sass pattern
 // 1. Configuration and helpers
-// @import 'abstracts/variables', 'abstracts/mixins';
+@import 'abstracts/variables', 'abstracts/mixins', 'abstracts/breakpoints';
 
 // 2. Vendors
 @import 'vendors/normalize';
@@ -10,6 +10,7 @@
 // 3. Base stuff
 @import 'base/base';
 @import 'base/fonts';
+@import 'base/typography';
 
 // 4. Layout-related sections
 // @import 'layout/footer';

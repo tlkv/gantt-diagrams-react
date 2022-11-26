@@ -1,0 +1,32 @@
+@use '../../styles/abstracts/mixins' as *;
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/breakpoints' as *;
+
+.table_tasks {
+  width: 390px;
+  height: calc(100vh - $header-height - $global-indent - 16px - $global-indent * 0.5);
+  overflow: hidden;
+
+  border: 1px solid $border-light;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  @media (max-width: $breakpoint-sm) {
+    width: 50%;
+  }
+}
+
+.inner_heading {
+  height: $inner-heading-height;
+  padding: 16px;
+
+  font-size: 14px;
+
+  background-color: $background-light;
+}
+
+.tasks_list {
+  height: calc(100% - $inner-heading-height);
+  overflow: auto;
+
+  white-space: pre;
+}

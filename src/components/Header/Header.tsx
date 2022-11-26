@@ -6,10 +6,10 @@ export const Header: FC = () => {
   return (
     <header className={s.header}>
       <nav className={s.navbar}>
-        <NavLink to="/" className={s['header-item']}>
+        <NavLink to="/" className={s.header_item}>
           Home
         </NavLink>
-        <NavLink to="/counter" className={s['header-item']}>
+        <NavLink to="/counter" className={s.header_item}>
           Counter
         </NavLink>
       </nav>

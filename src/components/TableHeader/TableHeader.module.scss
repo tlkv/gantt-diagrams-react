@@ -1,0 +1,52 @@
+@use '../../styles/abstracts/mixins' as *;
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/breakpoints' as *;
+
+.header {
+  @extend %flex-centered !optional;
+  justify-content: space-between;
+  width: 100%;
+  height: $header-height;
+  margin-bottom: calc($global-indent * 0.5);
+}
+
+.header_title {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 24px;
+  @media (max-width: $breakpoint-sm) {
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+.header_btn {
+  @extend %flex-centered !optional;
+  position: relative;
+
+  width: 101px;
+  height: 40px;
+
+  background: $color-white;
+  border: 1px solid rgb(38 40 66 / 12%);
+  border-radius: 10px;
+
+  .btn_text {
+    display: block;
+
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  &::before {
+    display: block;
+    width: 13px;
+    height: 18px;
+    margin-right: 10px;
+
+    background: url('../../assets/svg/arrow_download_regular.svg') center no-repeat;
+
+    content: '';
+  }
+}

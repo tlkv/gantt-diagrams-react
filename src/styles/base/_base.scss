@@ -6,6 +6,14 @@
 body {
   margin: 0;
   padding: 0;
+
+  color: $blue-dark;
+
+  background-color: $color-white;
+}
+
+a {
+  text-decoration: none;
 }
 
 code {

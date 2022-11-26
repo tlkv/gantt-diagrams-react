@@ -1,11 +1,13 @@
-import { useEffect, FC } from 'react';
+import { FC } from 'react';
 import { toast } from 'react-toastify';
-import { BASE_URL, RESP_DEFAULT, TOAST_TIMEOUT } from '../../data/constants';
-import s from './TablePage.module.scss';
-import { useGetDiagramQuery } from '../../store/diagramsApi';
+import { TableHeader } from 'components/TableHeader/TableHeader';
+import { TOAST_TIMEOUT } from '../../data/constants';
+import { useGetChartQuery } from '../../store/chartApi';
+import { TableTasks } from '../../components/TableTasks/TableTasks';
+import { TableTimeline } from '../../components/TableTimeline/TableTimeline';
 
 export const TablePage: FC = () => {
-  const { data = RESP_DEFAULT, isError } = useGetDiagramQuery('');
+  const { isError } = useGetChartQuery('');
 
   if (isError) {
     toast.error('Request failed. Loaded mock data instead :-)', {
@@ -14,9 +16,10 @@ export const TablePage: FC = () => {
   }
 
   return (
-    <div className={s['table-wrapper']}>
-      <h2>Table Page</h2>
-      <div style={{ whiteSpace: 'pre' }}>{JSON.stringify(data, null, 4)}</div>
-    </div>
+    <>
+      <TableHeader />
+      <TableTasks />
+      <TableTimeline />
+    </>
   );
 };
