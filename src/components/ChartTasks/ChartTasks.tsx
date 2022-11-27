@@ -1,11 +1,11 @@
 import { FC, useEffect } from 'react';
 import RESP_MOCK, { RESP_MOCK2, RESP_MOCK3 } from '../../data/constants';
 import { chartApi, useGetChartQuery } from '../../store/chartApi';
-import s from './TableTasks.module.scss';
+import s from './ChartTasks.module.scss';
 import { useAppDispatch } from '../../store/hooks';
 import { toggleOpenClose, transformCopy } from '../../store/utils';
 
-export const TableTasks: FC = () => {
+export const ChartTasks: FC = () => {
   const { data = RESP_MOCK } = useGetChartQuery('');
 
   const dispatch = useAppDispatch();
@@ -45,7 +45,7 @@ export const TableTasks: FC = () => {
   }, []);
 
   return (
-    <section className={s.table_tasks}>
+    <section className={s.chart_tasks}>
       <div className={s.inner_heading}>
         Work item{' '}
         <button type="button" onClick={() => handleFind(5)}>

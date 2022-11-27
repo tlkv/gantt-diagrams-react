@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import RESP_MOCK from '../../data/constants';
 import { useGetChartQuery } from '../../store/chartApi';
-import s from './TableHeader.module.scss';
+import s from './ChartHeader.module.scss';
 
-export const TableHeader: FC = () => {
+export const ChartHeader: FC = () => {
   const { data = RESP_MOCK } = useGetChartQuery('');
 
   return (
