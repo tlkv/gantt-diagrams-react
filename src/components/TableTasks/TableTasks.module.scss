@@ -4,14 +4,14 @@
 
 .table_tasks {
   width: 390px;
-  height: calc(100vh - $header-height - $global-indent - 16px - $global-indent * 0.5);
+  min-height: calc(100vh - $header-height - $global-indent - 16px - $global-indent * 0.5);
   overflow: hidden;
 
   border: 1px solid $border-light;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   @media (max-width: $breakpoint-sm) {
-    width: 50%;
+    width: 45%;
   }
 }
 
@@ -26,7 +26,6 @@
 
 .tasks_list {
   height: calc(100% - $inner-heading-height);
-  overflow: auto;
-
+  overflow-x: auto;
   white-space: pre;
 }

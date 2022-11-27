@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { RESP_MOCK } from '../../data/constants';
+import RESP_MOCK from '../../data/constants';
 import { useGetChartQuery } from '../../store/chartApi';
 import s from './TableHeader.module.scss';
 

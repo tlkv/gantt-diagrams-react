@@ -1,16 +1,35 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { BASE_URL } from '../data/constants';
+import { toast } from 'react-toastify';
 import { ChartData } from '../data/types';
+import RESP_MOCK, { BASE_URL, TOAST_TIMEOUT } from '../data/constants';
+import { transformCopy, transformData } from './utils';
 
 export const chartApi = createApi({
   reducerPath: 'chartApi',
   baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
+  // fix URL
   endpoints: (builder) => ({
     getChart: builder.query<ChartData, string>({
-      query: (arg) => {
-        console.log('arg', arg);
-        console.log('Hello I am here!');
-        return `test/${arg}`;
+      queryFn: async () => {
+        return { data: transformCopy(RESP_MOCK) };
+      },
+
+      async onCacheEntryAdded(arg, { updateCachedData, cacheEntryRemoved }) {
+        setTimeout(async () => {
+          try {
+            const result = await fetch(BASE_URL);
+            const data: ChartData = await result.json();
+            transformData(data.chart);
+            updateCachedData(() => data);
+            toast.success('Data fetched successfully.', {
+              autoClose: TOAST_TIMEOUT,
+            });
+          } catch (err) {
+            toast.info('GET request failed. Table will be filled with mock data.', {
+              autoClose: TOAST_TIMEOUT,
+            });
+          }
+        }, 500);
       },
     }),
   }),

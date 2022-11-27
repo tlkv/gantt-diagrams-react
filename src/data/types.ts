@@ -6,16 +6,19 @@ export interface CounterState {
   value: number;
 }
 
-export interface Chart {
+export interface ChartTask {
   id: number;
   title: string;
   period_start: string;
   period_end: string;
-  sub?: Chart[];
+  level?: number;
+  open?: boolean;
+  subtasks?: number;
+  sub?: ChartTask[];
 }
 
 export interface ChartData {
   project: string;
   period: string;
-  chart: Chart;
+  chart: ChartTask;
 }

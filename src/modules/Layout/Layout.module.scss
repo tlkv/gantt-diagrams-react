@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   max-width: $container-width;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
   padding: 16px $global-indent $global-indent;
 }
