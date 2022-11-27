@@ -2,21 +2,15 @@ import { FC, useEffect } from 'react';
 import RESP_MOCK, { RESP_MOCK2, RESP_MOCK3 } from '../../data/constants';
 import { chartApi, useGetChartQuery } from '../../store/chartApi';
 import s from './ChartTasks.module.scss';
+import st from './ChartTaskRecursive/ChartTasksRecursive.module.scss';
 import { useAppDispatch } from '../../store/hooks';
-import { toggleOpenClose, transformCopy } from '../../store/utils';
+import { transformCopy } from '../../store/utils';
+import { ChartTaskRecursive } from './ChartTaskRecursive/ChartTaskRecursive';
 
 export const ChartTasks: FC = () => {
-  const { data = RESP_MOCK } = useGetChartQuery('');
+  const { data = transformCopy(RESP_MOCK) } = useGetChartQuery('');
 
   const dispatch = useAppDispatch();
-
-  const handleFind = (id: number) => {
-    dispatch(
-      chartApi.util.updateQueryData('getChart', '', (currentChart) => {
-        toggleOpenClose(currentChart.chart, id);
-      })
-    );
-  };
 
   const handleDataSource2 = () => {
     dispatch(chartApi.util.updateQueryData('getChart', '', () => transformCopy(RESP_MOCK2)));
@@ -27,7 +21,7 @@ export const ChartTasks: FC = () => {
   };
 
   useEffect(() => {
-    const [dateStart, dateEnd] = data.period
+    const [dateStart, dateEnd] = data!.period
       .split('-')
       .map((i) => i.split('.'))
       .map((i) => new Date(Number(i[2]), Number(i[1]) - 1, Number(i[0])));
@@ -47,10 +41,7 @@ export const ChartTasks: FC = () => {
   return (
     <section className={s.chart_tasks}>
       <div className={s.inner_heading}>
-        Work item{' '}
-        <button type="button" onClick={() => handleFind(5)}>
-          OpenCloseId5
-        </button>
+        <span>Work item</span>
         <button type="button" onClick={handleDataSource2}>
           DataSource2
         </button>
@@ -58,7 +49,10 @@ export const ChartTasks: FC = () => {
           data3
         </button>
       </div>
-      <div className={s.tasks_list}>{JSON.stringify(data, null, 1)}</div>
+      <div className={s.tasks_list}>
+        <div className={st.tasks_list_item} />
+        <ChartTaskRecursive taskElem={data?.chart} />
+      </div>
     </section>
   );
 };

@@ -1,0 +1,26 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/breakpoints' as *;
+
+.tasks_list_item {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $border-light;
+  cursor: pointer;
+}
+
+.task_item_type_1 {
+  color: #4cd964;
+}
+
+.task_list_inner {
+  font-size: 14px;
+}
+
+.tasks_counter {
+  font-style: italic;
+  margin-right: 10px;
+  font-size: 12px;
+  color: $gray-light;
+}

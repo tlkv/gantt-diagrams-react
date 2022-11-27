@@ -17,42 +17,15 @@ export const transformCopy = (data: ChartData) => {
   return deepCopy;
 };
 
-export const toggleOpenClose = (elem: ChartTask, fId: number) => {
+export const toggleShow = (elem: ChartTask, fId: number) => {
   if (elem.id === fId) {
     elem.open = !elem.open;
     return true;
   }
   if (elem?.sub) {
     elem?.sub?.forEach((item) => {
-      toggleOpenClose(item, fId);
+      toggleShow(item, fId);
     });
   }
   return false;
 };
-
-//
-//
-// export function Family({ familyTree }) {
-//   const [isVisible, setIsVisible] = useState(false);
-//   const expand = () => {
-//     setIsVisible(!isVisible);
-//   };
-//   return (
-//     <div style={{ paddingLeft: 10 }}>
-//   <span onClick={expand}>{familyTree.name}</span>
-//   {isVisible ? (
-//     familyTree?.children?.map((child) => {
-//       return (
-//         <div style={{ paddingLeft: 10 }}>
-//       <Family familyTree={child} />
-//       </div>
-//     );
-//     })
-//   ) : (
-//     <></>
-//   )}
-//   </div>
-// );
-// }
-//
-// <Family familyTree={familyTree} />

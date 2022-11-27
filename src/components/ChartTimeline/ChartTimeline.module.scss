@@ -4,7 +4,7 @@
 
 .chart_timeline {
   position: relative;
-
+  user-select: none;
   flex-grow: 1;
   width: calc(100% - 390px);
   min-height: calc(100vh - $header-height - $global-indent - 16px - $global-indent * 0.5);
