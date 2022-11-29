@@ -2,6 +2,7 @@
 
 .main_container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   max-width: $container-width;
   min-height: 100vh;

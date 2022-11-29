@@ -1,0 +1,10 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/breakpoints' as *;
+
+.chart_line {
+  height: 39px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

@@ -2,13 +2,20 @@ import { FC } from 'react';
 import { ChartHeader } from 'components/ChartHeader/ChartHeader';
 import { ChartTasks } from '../../components/ChartTasks/ChartTasks';
 import { ChartTimeline } from '../../components/ChartTimeline/ChartTimeline';
+import ErrorBoundary from '../../components/UI/ErrorBoudary';
 
-export const ChartPage: FC = () => {
+const ChartPage: FC = () => {
   return (
     <>
       <ChartHeader />
-      <ChartTasks />
-      <ChartTimeline />
+      <ErrorBoundary>
+        <ChartTasks />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <ChartTimeline />
+      </ErrorBoundary>
     </>
   );
 };
+
+export default ChartPage;

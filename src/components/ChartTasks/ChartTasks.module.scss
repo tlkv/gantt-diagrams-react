@@ -4,7 +4,7 @@
 
 .chart_tasks {
   width: 390px;
-  min-height: calc(100vh - $header-height - $global-indent - 16px - $global-indent * 0.5);
+  height: calc(100vh - $header-height - $global-indent - 16px - $global-indent * 0.5);
   overflow: hidden;
   user-select: none;
 
@@ -23,10 +23,26 @@
   font-weight: 500;
   background-color: $background-light;
   border-bottom: 1px solid $border-light;
+  overflow: hidden;
+  position: relative;
 }
 
 .tasks_list {
   height: calc(100% - $inner-heading-height);
   overflow-x: auto;
-  white-space: pre;
+}
+
+.alt_button {
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin: 0 5px 2px 12px;
+  width: 48px;
+  font-size: 11px;
+  position: relative;
+  top: -15px;
+  background-color: $color-white;
+  border: 1px solid $border-light;
+  @media (max-width: $breakpoint-sm) {
+    display: none;
+  }
 }

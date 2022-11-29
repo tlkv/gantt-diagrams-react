@@ -1,22 +1,28 @@
+import { FC } from 'react';
 import { ChartTask } from '../../../data/types';
 import { useAppDispatch } from '../../../store/hooks';
 import { chartApi } from '../../../store/chartApi';
 import { toggleShow } from '../../../store/utils';
+import s from './ChartTimelineRecursive.module.scss';
 
-export const ChartTimelineRecursive = ({ taskElem }: { taskElem: ChartTask }) => {
+const ChartTimelineRecursive: FC<{ taskElem?: ChartTask }> = ({ taskElem }) => {
   const dispatch = useAppDispatch();
 
-  const toggleExpand = (id: number) => {
+  const toggleTimeline = (id: number | undefined) => {
+    if (!id) return;
     dispatch(
       chartApi.util.updateQueryData('getChart', '', (currentChart) => {
         toggleShow(currentChart.chart, id);
       })
     );
   };
+
   return (
     <div>
-      <div onClick={() => toggleExpand(taskElem.id)}>{taskElem.title}</div>
-      {taskElem.open &&
+      <div className={s.chart_line} onClick={() => toggleTimeline(taskElem?.id)}>
+        {taskElem?.title}
+      </div>
+      {taskElem?.open &&
         taskElem?.sub?.map((subTask) => {
           return (
             <div key={subTask.id}>
@@ -27,3 +33,5 @@ export const ChartTimelineRecursive = ({ taskElem }: { taskElem: ChartTask }) =>
     </div>
   );
 };
+
+export default ChartTimelineRecursive;

@@ -1,7 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { toast } from 'react-toastify';
 import { ChartData } from '../data/types';
-import RESP_MOCK, { BASE_URL, TOAST_TIMEOUT } from '../data/constants';
+import { BASE_URL, TOAST_TIMEOUT } from '../data/constants';
+import RESP_MOCK from '../data/mockData';
 import { transformCopy, transformData } from './utils';
 
 export const chartApi = createApi({
