@@ -8,6 +8,7 @@
   align-items: center;
   border-bottom: 1px solid $border-light;
   cursor: pointer;
+  width: 100%;
 }
 
 .task_item_type_1 {
@@ -16,9 +17,9 @@
 
 .task_item_inner {
   font-size: 14px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  //overflow: hidden;
+  //white-space: nowrap;
+  // text-overflow: ellipsis;
 }
 
 .tasks_counter {

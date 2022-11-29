@@ -47,24 +47,31 @@ export const ChartCalendar: FC<{ period?: string }> = ({ period }) => {
 
   return (
     <div className={s.chart_timeline_background}>
-      <div className={s.timeline_weeks}>
-        {new Array(Math.round(daysAmount / 7)).fill(0).map((elem, ind) => (
-          <div key={v4()} className={s.week_item}>
-            {getWeekData(dateStart, ind)} &apos;
-            <span className={s.light_text}>{getWeekYear(dateStart, ind)}</span>
-          </div>
-        ))}
-      </div>
-      <div className={s.timeline_days}>
-        {new Array(daysAmount).fill(0).map((elem, ind) => (
-          <div key={v4()} className={s.day_item_container}>
-            <div className={s.day_item_content}>
-              <span className={isWeekend(dateStart, ind) ? s.light_text : ''}>
-                {getMonthDay(dateStart, ind)}
-              </span>
+      <div className={s.timeline_sticky}>
+        <div className={s.timeline_weeks}>
+          {new Array(Math.round(daysAmount / 7)).fill(0).map((elem, ind) => (
+            <div key={v4()} className={s.week_item}>
+              {getWeekData(dateStart, ind)} &apos;
+              <span className={s.light_text}>{getWeekYear(dateStart, ind)}</span>
             </div>
-            <div className={s.day_item_bottom} />
-          </div>
+          ))}
+        </div>
+        <div className={s.timeline_days}>
+          {new Array(daysAmount).fill(0).map((elem, ind) => (
+            <div key={v4()} className={s.day_item_container}>
+              <div className={s.day_item_content}>
+                <span className={isWeekend(dateStart, ind) ? s.light_text : ''}>
+                  {getMonthDay(dateStart, ind)}
+                </span>
+              </div>
+              <div className={s.day_item_bottom} />
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className={s.timeline_columns}>
+        {new Array(daysAmount).fill(0).map(() => (
+          <div key={v4()} className={s.day_item_column} />
         ))}
       </div>
     </div>

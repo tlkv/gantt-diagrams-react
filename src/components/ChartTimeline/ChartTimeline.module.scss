@@ -6,19 +6,11 @@
   position: relative;
   user-select: none;
   flex-grow: 1;
-  width: calc(100% - 390px);
-  height: calc(100vh - $header-height - $global-indent - 16px - $global-indent * 0.5);
-  overflow-x: auto;
 
-  border-top: 1px solid $border-light;
-  border-bottom: 1px solid $border-light;
-  box-shadow: -8px 0 8px rgb(16 31 43 / 10%) inset;
-  @media (max-width: $breakpoint-sm) {
-    width: 55%;
-  }
 }
 
 .chart_timeline_graphics {
   @extend %absolute-max !optional;
   z-index: 1;
+  padding-top: 87px;
 }

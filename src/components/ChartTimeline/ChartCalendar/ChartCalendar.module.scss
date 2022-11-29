@@ -16,12 +16,16 @@
 }
 
 .timeline_weeks,
-.timeline_days {
+.timeline_days, .timeline_columns {
   display: flex;
 }
 
 .timeline_days {
-  min-height: calc(100% - 24px);
+  height: 24px;
+}
+
+.timeline_columns {
+  height: calc(100% - 48px);
 }
 
 .week_item {
@@ -44,10 +48,23 @@
   @extend %flex-centered;
   @extend %calendar-top;
   width: 21px;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .day_item_bottom {
   border-right: 1px solid $border-light;
   flex-grow: 1;
+}
+
+.timeline_sticky {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.day_item_column {
+  height: 100%;
+  border-right: 1px solid $border-light;
+  width: 21px;
+
 }
