@@ -1,7 +1,7 @@
 import { ChartData } from './types';
 
-export const RESP_MOCK: ChartData = {
-  project: 'DMS 2.0',
+const RESP_MOCK: ChartData = {
+  project: 'DMS 2.0 DEF',
   period: '02.09.2022-31.12.2022',
   chart: {
     id: 1,

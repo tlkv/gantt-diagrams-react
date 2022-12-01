@@ -3,17 +3,22 @@
 @use '../../styles/abstracts/breakpoints' as *;
 
 .chart_tasks {
-  width: 28%;
-  max-width: 500px;
-  min-width: 150px;
-  // height: calc(100vh - $header-height - $global-indent - 16px - $global-indent * 0.5);
-  // overflow: hidden;
-  border-right: 1px solid $border-light;
-  user-select: none;
   position: sticky;
   left: 0;
   z-index: 4;
+
+  width: 28%;
+  min-width: 150px;
+  max-width: 500px;
+
   background: $color-white;
+
+  // height: calc(100vh - $header-height - $global-indent - 16px - $global-indent * 0.5);
+  // overflow: hidden;
+  border-right: 1px solid $border-light;
+
+  user-select: none;
+
   // resize: horizontal;
   @media (max-width: $breakpoint-sm) {
     width: 45%;
@@ -21,42 +26,49 @@
 }
 
 .inner_heading {
-  height: $inner-heading-height;
-  padding: 16px;
-  font-size: 14px;
-  font-weight: 500;
-  background-color: $background-light;
-  border-bottom: 1px solid $border-light;
   // overflow: hidden;
   position: sticky;
   top: 0;
   z-index: 4;
+
+  height: $inner-heading-height;
+  padding: 16px;
+
+  font-weight: 500;
+  font-size: 14px;
+
+  background-color: $background-light;
+  border-bottom: 1px solid $border-light;
 }
 
 .tasks_list {
   height: calc(100% - $inner-heading-height);
+
   // overflow-x: auto;
   overflow-x: auto;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
+    display: none;
     width: 0;
     height: 0;
-    display: none;
   }
 }
 
 .alt_button {
-  padding: 2px 4px;
-  border-radius: 4px;
-  margin: 0 5px 2px 12px;
-  width: 48px;
-  font-size: 11px;
   position: relative;
   top: -15px;
+
+  width: 48px;
+  margin: 0 5px 2px 12px;
+  padding: 2px 4px;
+
+  font-size: 11px;
+
   background-color: $color-white;
   border: 1px solid $border-light;
+  border-radius: 4px;
   @media (max-width: $breakpoint-sm) {
     display: none;
   }

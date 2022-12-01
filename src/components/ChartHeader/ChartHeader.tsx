@@ -9,6 +9,8 @@ import { RESP_MOCK2, MOCK_DATA_5Y } from '../../data/mockData';
 export const ChartHeader: FC = () => {
   const { data, refetch } = useGetChartQuery('');
 
+  console.log('rerender ChartHeader', data);
+
   const dispatch = useAppDispatch();
 
   const handleDataSource = (chartAltData: ChartData) => {
@@ -28,8 +30,7 @@ export const ChartHeader: FC = () => {
           type="button"
           className={s.alt_button}
           style={{ fontWeight: 900 }}
-          onClick={() => handleDataSource(MOCK_DATA_5Y)}
-        >
+          onClick={() => handleDataSource(MOCK_DATA_5Y)}>
           Load data for 5 years
         </button>
         <button type="button" className={s.alt_button} onClick={refetch}>
@@ -40,8 +41,7 @@ export const ChartHeader: FC = () => {
             JSON.stringify(data, null, '\t')
           )}`}
           download="export.json"
-          className={s.header_btn}
-        >
+          className={s.header_btn}>
           <span className={s.btn_text}>Export</span>
         </a>
       </div>

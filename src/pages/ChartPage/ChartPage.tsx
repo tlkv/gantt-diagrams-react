@@ -3,9 +3,11 @@ import { ChartHeader } from 'components/ChartHeader/ChartHeader';
 import { ChartTasks } from '../../components/ChartTasks/ChartTasks';
 import { ChartTimeline } from '../../components/ChartTimeline/ChartTimeline';
 import s from './ChartPage.module.scss';
-import ErrorBoundary from '../../components/UI/ErrorBoudary';
+import ErrorBoundary from '../../modules/ErrorBoudary';
 
 const ChartPage: FC = () => {
+  console.log('rerender ChartPage');
+
   return (
     <>
       <ChartHeader />

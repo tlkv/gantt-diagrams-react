@@ -5,13 +5,14 @@ import st from './ChartTaskRecursive/ChartTasksRecursive.module.scss';
 import { ChartTaskRecursive } from './ChartTaskRecursive/ChartTaskRecursive';
 
 export const ChartTasks: FC = () => {
+  console.log('rerender ChartTasks');
   const { data } = useGetChartQuery('');
 
   return (
     <section className={s.chart_tasks}>
-      <div className={s.inner_heading}>
+      <header className={s.inner_heading}>
         <span>Work item</span>
-      </div>
+      </header>
       <div className={s.tasks_list}>
         <div className={st.tasks_list_item} />
         <ChartTaskRecursive taskElem={data?.chart} />

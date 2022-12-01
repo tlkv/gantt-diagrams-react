@@ -20,5 +20,7 @@ export interface ChartTask {
 export interface ChartData {
   project: string;
   period: string;
+  dateStart?: string;
+  daysAmount?: number;
   chart: ChartTask;
 }

@@ -2,8 +2,8 @@
 
 .main_container {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   max-width: $container-width;
   min-height: 100vh;
   margin: 0 auto;

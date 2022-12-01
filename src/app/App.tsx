@@ -3,18 +3,19 @@ import { Layout } from 'modules/Layout/Layout';
 import { BrowserRouter } from 'react-router-dom';
 import { StoreWrapper } from 'store/StoreWrapper';
 import { RoutesWrapper } from 'modules/Router/RoutesWrapper';
-import ErrorBoundary from '../components/UI/ErrorBoudary';
-import { SuspenseWrapper } from '../components/UI/SuspenseWrapper';
+import ErrorBoundary from '../modules/ErrorBoudary';
+import { ContextWrapper } from '../modules/ContextWrapper';
 
 export const App: FC = () => {
+  console.log('rerender App');
   return (
     <StoreWrapper>
       <BrowserRouter>
         <ErrorBoundary>
           <Layout>
-            <SuspenseWrapper>
+            <ContextWrapper>
               <RoutesWrapper />
-            </SuspenseWrapper>
+            </ContextWrapper>
           </Layout>
         </ErrorBoundary>
       </BrowserRouter>

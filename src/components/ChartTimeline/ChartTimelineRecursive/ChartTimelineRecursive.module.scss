@@ -3,9 +3,8 @@
 @use '../../../styles/abstracts/breakpoints' as *;
 
 .chart_line {
-  height: 39px;
   display: flex;
   align-items: center;
-  cursor: pointer;
+  height: 39px;
   border: 1px solid red;
 }

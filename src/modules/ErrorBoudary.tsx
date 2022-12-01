@@ -15,6 +15,7 @@ class ErrorBoundary extends Component<Props, State> {
     hasError: false,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public static getDerivedStateFromError(_: Error): State {
     // Update state so the next render will show the fallback UI.
     return { hasError: true };
@@ -25,6 +26,7 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   public render() {
+    console.log('rerender ERR');
     // eslint-disable-next-line react/destructuring-assignment
     if (this.state.hasError) {
       return (

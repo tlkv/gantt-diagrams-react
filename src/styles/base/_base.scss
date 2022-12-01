@@ -11,21 +11,19 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.02);
+  background: rgb(0 0 0 / 2%);
 }
 
 *::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: #999;
   background: #999;
+  background-color: #999;
+  border-radius: 10px;
 }
 
 body {
   margin: 0;
   padding: 0;
-
   color: $blue-dark;
-
   background-color: $color-white;
 }
 
@@ -36,5 +34,3 @@ a {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-
-

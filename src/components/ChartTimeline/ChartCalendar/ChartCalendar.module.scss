@@ -3,11 +3,11 @@
 @use '../../../styles/abstracts/breakpoints' as *;
 
 %calendar-top {
-  background-color: $background-light;
   height: 24px;
+  font-size: 12px;
+  background-color: $background-light;
   border-right: 1px solid $border-light;
   border-bottom: 1px solid $border-light;
-  font-size: 12px;
 }
 
 .chart_timeline_background {
@@ -16,7 +16,8 @@
 }
 
 .timeline_weeks,
-.timeline_days, .timeline_columns {
+.timeline_days,
+.timeline_columns {
   display: flex;
 }
 
@@ -51,11 +52,6 @@
   // overflow: hidden;
 }
 
-.day_item_bottom {
-  border-right: 1px solid $border-light;
-  flex-grow: 1;
-}
-
 .timeline_sticky {
   position: sticky;
   top: 0;
@@ -63,8 +59,7 @@
 }
 
 .day_item_column {
+  width: 21px;
   height: 100%;
   border-right: 1px solid $border-light;
-  width: 21px;
-
 }

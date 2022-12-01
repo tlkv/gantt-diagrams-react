@@ -1,10 +1,8 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
-import countReducer from './reducers/countSlice';
 import { chartApi } from './chartApi';
 
 const store = configureStore({
   reducer: {
-    count: countReducer,
     [chartApi.reducerPath]: chartApi.reducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(chartApi.middleware),
