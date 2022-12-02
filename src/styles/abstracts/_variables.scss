@@ -1,9 +1,28 @@
-$header-height: 80px;
+$header-height: 40px;
+$global-indent: 24px;
 $footer-height: 60px;
-$container-width: 1280px;
+$blue-dark: #262842;
+$container-width: 100%;
+$color-white: #fff;
+$color-font-light: #a9a9b8;
 $bluefont: darkblue;
 $graylight: #cfcfcf;
 $gray-backgr: #eee;
-$default-font: 'Montserrat', sans-serif;
+$gray-light: #8b8c9e;
 $default-transition-duration: 0.4s;
 $default-transition-function: ease-out;
+$border-light: rgb(38 40 66 / 12%);
+$background-light: #f7f8fc;
+$inner-heading-height: 48px;
+
+$line-background-lightblue: #e2ebff;
+$line-border-lightblue: #497cf6;
+$line-background-yellow: #fff2e0;
+$line-border-yellow: #ffa530;
+$line-background-green: #cff0d6;
+$line-border-green: #2db77b;
+
+$task-backgr-purple: #f5f1fe;
+$task-backgr-green: #eef9f4;
+$task-backgr-yellow: #fefbf0;
+$task-backgr-red: #faeff2;

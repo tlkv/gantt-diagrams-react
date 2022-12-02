@@ -3,7 +3,9 @@ button {
   outline: 0;
   cursor: pointer;
 
-  &:hover {
-    filter: brightness(1.1);
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
   }
 }

@@ -1,9 +1,11 @@
 @use '../../styles/abstracts/variables' as *;
 
-.main-container {
+.main_container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   max-width: $container-width;
-  min-height: calc(100vh - $footer-height);
+  min-height: 100vh;
   margin: 0 auto;
-  padding: calc($header-height + 10px) 10px 10px;
+  padding: 16px $global-indent $global-indent;
 }

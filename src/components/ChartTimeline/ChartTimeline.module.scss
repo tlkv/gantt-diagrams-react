@@ -1,0 +1,15 @@
+@use '../../styles/abstracts/mixins' as *;
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/breakpoints' as *;
+
+.chart_timeline {
+  position: relative;
+  flex-grow: 1;
+  user-select: none;
+}
+
+.chart_timeline_graphics {
+  @extend %absolute-max !optional;
+  z-index: 1;
+  padding-top: 86px;
+}

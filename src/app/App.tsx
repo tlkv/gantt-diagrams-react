@@ -3,14 +3,20 @@ import { Layout } from 'modules/Layout/Layout';
 import { BrowserRouter } from 'react-router-dom';
 import { StoreWrapper } from 'store/StoreWrapper';
 import { RoutesWrapper } from 'modules/Router/RoutesWrapper';
+import ErrorBoundary from '../modules/ErrorBoudary';
+import { ContextWrapper } from '../modules/ContextWrapper';
 
 export const App: FC = () => {
   return (
     <StoreWrapper>
       <BrowserRouter>
-        <Layout>
-          <RoutesWrapper />
-        </Layout>
+        <ErrorBoundary>
+          <Layout>
+            <ContextWrapper>
+              <RoutesWrapper />
+            </ContextWrapper>
+          </Layout>
+        </ErrorBoundary>
       </BrowserRouter>
     </StoreWrapper>
   );

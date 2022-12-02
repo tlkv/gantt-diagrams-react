@@ -1,0 +1,96 @@
+@use '../../styles/abstracts/mixins' as *;
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/breakpoints' as *;
+
+.header {
+  @extend %flex-centered !optional;
+  justify-content: space-between;
+  width: 100%;
+  height: $header-height;
+  margin-bottom: calc($global-indent * 0.5);
+}
+
+.header_title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 24px;
+  @media (max-width: $breakpoint-sm) {
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+.header_btn {
+  @extend %flex-centered !optional;
+  position: relative;
+  width: 101px;
+  height: 40px;
+  margin-left: 20px;
+  color: $blue-dark;
+  background: $color-white;
+  border: 1px solid rgb(38 40 66 / 12%);
+  border-radius: 10px;
+  cursor: pointer;
+
+  .btn_text {
+    z-index: 1;
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  &::before {
+    z-index: 1;
+    display: block;
+    width: 13px;
+    height: 18px;
+    margin-right: 10px;
+    background: url('../../assets/svg/arrow_download_regular.svg') center no-repeat;
+    content: '';
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $background-light;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.3s ease-in-out;
+    content: '';
+  }
+
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.btn_wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.alt_button {
+  position: relative;
+  width: 66px;
+  height: 40px;
+  margin: 0 4px;
+  padding: 2px 4px;
+  font-size: 10px;
+  background-color: $color-white;
+  border: 1px solid $border-light;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+  @media (max-width: $breakpoint-sm) {
+    display: none;
+  }
+
+  &:hover {
+    background-color: $background-light;
+  }
+}

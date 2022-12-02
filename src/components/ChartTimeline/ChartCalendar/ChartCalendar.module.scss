@@ -1,0 +1,72 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/breakpoints' as *;
+
+%calendar-top {
+  height: 24px;
+  font-size: 12px;
+  background-color: $background-light;
+  border-right: 1px solid $border-light;
+  border-bottom: 1px solid $border-light;
+}
+
+.chart_timeline_background {
+  @extend %absolute-max !optional;
+  height: 100% !important;
+}
+
+.timeline_weeks,
+.timeline_days,
+.timeline_columns {
+  display: flex;
+}
+
+.timeline_days {
+  height: 24px;
+}
+
+.timeline_columns {
+  height: calc(100% - 48px);
+}
+
+.week_item {
+  @extend %flex-centered;
+  @extend %calendar-top;
+  width: 147px;
+  padding-left: 15px;
+}
+
+.light_text {
+  color: $color-font-light;
+}
+
+.day_item_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.day_item_content {
+  @extend %flex-centered;
+  @extend %calendar-top;
+  width: 21px;
+  // overflow: hidden;
+}
+
+.timeline_sticky {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.day_item_column {
+  width: 21px;
+  height: 100%;
+  border-right: 1px solid $border-light;
+}
+
+.scroll_ref {
+  width: 10px;
+  height: 0;
+  position: relative;
+  left: -700px;
+}

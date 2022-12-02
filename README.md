@@ -1,13 +1,19 @@
-# Custom Create React App bundle
+# [Pull request + Project Info](https://github.com/tlkv/gantt-diagrams-react/pull/1)
 
-<!-- [![Codacy Badge](https://app.codacy.com/project/badge/Grade/394d72c467f54aaa98a77ed1fb4b80bc)](https://www.codacy.com/gh/tlkv/webpack-react-ts/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tlkv/webpack-react-ts&amp;utm_campaign=Badge_Grade)
-[![Maintainability](https://api.codeclimate.com/v1/badges/d33ad9a2b4ab8d26f2d9/maintainability)](https://codeclimate.com/github/tlkv/webpack-react-ts/maintainability)
-[![CodeFactor](https://www.codefactor.io/repository/github/tlkv/webpack-react-ts/badge)](https://www.codefactor.io/repository/github/tlkv/webpack-react-ts)
-![Workflow](https://github.com/tlkv/webpack-react-ts/actions/workflows/CI.yml/badge.svg) -->
+![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=gantt-diagrams-react)
+![Workflow](https://github.com/tlkv/gantt-diagrams-react/actions/workflows/CI.yml/badge.svg)
 
-To update packages use:
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=tlkv_gantt-diagrams-react&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=tlkv_gantt-diagrams-react)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=tlkv_gantt-diagrams-react&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=tlkv_gantt-diagrams-react)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=tlkv_gantt-diagrams-react&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=tlkv_gantt-diagrams-react)
+
+
+
+### Running locally
 
 ```
-npx npm-check-updates -u
-npm i
+git clone <repo_url>
+cd <project_directory>
+npm install
+npm start
 ```

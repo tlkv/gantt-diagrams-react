@@ -1,0 +1,37 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/variables' as *;
+@use '../../../styles/abstracts/breakpoints' as *;
+
+.chart_item {
+  display: flex;
+  align-items: center;
+  height: 39px;
+  font-size: 14px;
+}
+
+.chart_line {
+  height: 24px;
+  background-color: $line-background-lightblue;
+  border: 1px solid $line-border-lightblue;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+.chart_line_type_2,
+.chart_line_type_5 {
+  background-color: $line-background-yellow;
+  border: 1px solid $line-border-yellow;
+}
+
+.chart_line_type_3,
+.chart_line_type_4 {
+  background-color: $line-background-green;
+  border: 1px solid $line-border-green;
+}
+
+.chart_task_title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 200px;
+}

@@ -1,0 +1,14 @@
+@use '../../styles/abstracts/variables' as *;
+
+.charts_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - $header-height - $global-indent - 16px - $global-indent * 0.5);
+  overflow: auto;
+  border: 1px solid $border-light;
+  border-right: none;
+  border-top-left-radius: 10px;
+  box-shadow: -8px 0 8px rgb(16 31 43 / 10%) inset;
+}
