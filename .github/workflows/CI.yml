@@ -2,7 +2,7 @@ name: Continuous Integration (CI)
 run-name: Continuous Integration (CI)
 on:
   push:
-    branches: [ master, main, github-actions ]
+    branches: [ master, main, dev, github-actions ]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
