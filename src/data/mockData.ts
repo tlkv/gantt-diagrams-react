@@ -134,7 +134,7 @@ export const RESP_MOCK2: ChartData = {
 
 export const MOCK_DATA_5Y: ChartData = {
   project: 'DMS 2.0 MOCK 3',
-  period: '12.12.2017-31.12.2022',
+  period: '19.12.2017-31.12.2022',
   chart: {
     id: 1,
     title: 'Marketing Launch',

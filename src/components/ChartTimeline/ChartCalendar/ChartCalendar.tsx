@@ -1,7 +1,13 @@
 import React, { FC, useContext } from 'react';
 import s from './ChartCalendar.module.scss';
 import { DAYS_AMOUNT_DEFAULT, DEF_DATE } from '../../../data/constants';
-import { getMonthDay, getWeekData, getWeekYear, isWeekend } from '../../../utils/dateHelpers';
+import {
+  fixDate,
+  getMonthDay,
+  getWeekData,
+  getWeekYear,
+  isWeekend,
+} from '../../../utils/dateHelpers';
 import { ChartContext } from '../../../modules/ContextWrapper';
 
 export const ChartCalendar: FC<{ dateStart?: string; daysAmount?: number }> = ({
@@ -11,9 +17,7 @@ export const ChartCalendar: FC<{ dateStart?: string; daysAmount?: number }> = ({
   const { scrollRef } = useContext(ChartContext);
   const incomingDate = (dateStart || DEF_DATE).split('-').map(Number);
 
-  // fix date for ios
-  const fixedDate = new Date(incomingDate[0], incomingDate[1] - 1, incomingDate[2]);
-
+  const fixedDate = fixDate(incomingDate);
   const fixedDaysAmount = daysAmount || DAYS_AMOUNT_DEFAULT;
 
   return (

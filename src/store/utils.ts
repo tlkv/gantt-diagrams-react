@@ -1,5 +1,6 @@
 import RESP_MOCK from 'data/mockData';
 import { ChartData, ChartTask } from '../data/types';
+import { fixDate } from '../utils/dateHelpers';
 
 export const transformChart = (
   { chart, dateStart }: { chart: ChartTask; dateStart?: string },
@@ -9,15 +10,18 @@ export const transformChart = (
   chart.open = true;
   chart.subtasks = chart.sub?.length || 0;
 
+  const fixedPeriodEnd = chart.period_end.split('-').map(Number);
+  const fixedPeriodStart = chart.period_start.split('-').map(Number);
+
   chart.line_length = Math.round(
     1 +
-      (new Date(chart.period_end).getTime() - new Date(chart.period_start).getTime()) /
-        (24 * 1000 * 3600)
+      (fixDate(fixedPeriodEnd).getTime() - fixDate(fixedPeriodStart).getTime()) / (24 * 1000 * 3600)
   );
 
   if (dateStart) {
+    const fixedDateStart = dateStart.split('-').map(Number);
     chart.offset = Math.round(
-      (new Date(chart.period_start).getTime() - new Date(dateStart).getTime()) / (24 * 1000 * 3600)
+      (fixDate(fixedPeriodStart).getTime() - fixDate(fixedDateStart).getTime()) / (24 * 1000 * 3600)
     );
   }
 

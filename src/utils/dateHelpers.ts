@@ -26,3 +26,8 @@ export const isWeekend = (dateStart: Date, dayInd: number) => {
   const current = new Date(dateStart.getTime() + 24 * 3600 * 1000 * dayInd).getDay();
   return current === 6 || !current;
 };
+
+// fix date for ios
+export const fixDate = (input: number[]) => {
+  return new Date(input[0], input[1] - 1, input[2]);
+};
