@@ -5,7 +5,6 @@ import ChartTimelineRecursive from './ChartTimelineRecursive/ChartTimelineRecurs
 import { ChartCalendar } from './ChartCalendar/ChartCalendar';
 
 export const ChartTimeline: FC = () => {
-  console.log('rerender ChartTimeline');
   const { data } = useGetChartQuery('');
 
   return (

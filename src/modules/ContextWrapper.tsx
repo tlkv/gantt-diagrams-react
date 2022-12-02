@@ -1,9 +1,14 @@
-import { createContext, ReactNode, useMemo } from 'react';
+import { createContext, createRef, ReactNode, RefObject, useMemo } from 'react';
 import { toggleShow } from '../store/utils';
 import { useAppDispatch } from '../store/hooks';
 import { chartApi } from '../store/chartApi';
 
-export const ChartContext = createContext({} as { toggleExpand: (id?: number) => void });
+export const ChartContext = createContext(
+  {} as {
+    toggleExpand: (id?: number) => void;
+    scrollRef: RefObject<HTMLDivElement>;
+  }
+);
 
 export const ContextWrapper = ({ children }: { children: ReactNode }) => {
   const dispatch = useAppDispatch();
@@ -17,11 +22,14 @@ export const ContextWrapper = ({ children }: { children: ReactNode }) => {
     );
   };
 
+  const scrollRef: RefObject<HTMLDivElement> = createRef();
+
   const chartStore = useMemo(
     () => ({
       toggleExpand,
+      scrollRef,
     }),
-    []
+    [scrollRef]
   );
 
   return <ChartContext.Provider value={chartStore}>{children}</ChartContext.Provider>;

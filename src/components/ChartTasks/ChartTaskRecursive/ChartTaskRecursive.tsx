@@ -9,17 +9,26 @@ export const ChartTaskRecursive: FC<{ taskElem?: ChartTask }> = ({ taskElem }) =
   return (
     <>
       <div
-        className={`${s.tasks_list_item} ${s[`task_item_type_${taskElem?.level}`]}`}
-        onClick={() => toggleExpand(taskElem?.id)}
+        className={`${s.tasks_list_item} ${
+          s[`task_item_type_${(taskElem?.level || 1) % 5}`] || ''
+        }`}
+        onClick={taskElem?.sub ? () => toggleExpand(taskElem?.id) : undefined}
         style={{
           paddingLeft: 20 * (taskElem?.level || 1),
           cursor: taskElem?.subtasks ? 'pointer' : 'default',
         }}>
-        <span className={s.tasks_counter}>{taskElem?.subtasks}</span>
-        <span className={s.tasks_title}>{taskElem?.title}</span>
+        <div
+          className={s.tasks_list_arrow}
+          style={{
+            opacity: taskElem?.sub ? 1 : 0,
+            transform: taskElem?.open ? 'rotate(0deg)' : 'rotate(-90deg)',
+          }}
+        />
+        <div className={s.tasks_list_icon} />
+        <div className={s.tasks_counter}>{taskElem?.subtasks}</div>
+        <div className={s.tasks_title}>{taskElem?.title}</div>
       </div>
       {taskElem?.open &&
-        !!taskElem?.subtasks &&
         taskElem?.sub?.map((subTask) => {
           return <ChartTaskRecursive taskElem={subTask} key={subTask.id} />;
         })}

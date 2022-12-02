@@ -5,7 +5,6 @@ import st from './ChartTaskRecursive/ChartTasksRecursive.module.scss';
 import { ChartTaskRecursive } from './ChartTaskRecursive/ChartTaskRecursive';
 
 export const ChartTasks: FC = () => {
-  console.log('rerender ChartTasks');
   const { data } = useGetChartQuery('');
 
   return (

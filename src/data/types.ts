@@ -14,6 +14,8 @@ export interface ChartTask {
   level?: number;
   open?: boolean;
   subtasks?: number;
+  offset?: number;
+  line_length?: number;
   sub?: ChartTask[];
 }
 

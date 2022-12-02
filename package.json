@@ -32,6 +32,7 @@
     "prettier": "^2.7.1",
     "react-scripts": "^5.0.1",
     "sass": "^1.56.0",
+    "speed-measure-webpack-plugin": "^1.5.0",
     "stylelint": "^14.14.1",
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-rational-order": "^0.1.2",

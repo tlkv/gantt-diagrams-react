@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom';
 import { ROUTES_LIST } from './routes';
 
 export const RoutesWrapper: FC = () => {
-  console.log('rerender RoutesWrapper');
   return (
     <Routes>
       {ROUTES_LIST.map(({ path, component }) => (

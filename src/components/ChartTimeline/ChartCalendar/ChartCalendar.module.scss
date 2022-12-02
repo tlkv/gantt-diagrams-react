@@ -63,3 +63,10 @@
   height: 100%;
   border-right: 1px solid $border-light;
 }
+
+.scroll_ref {
+  width: 10px;
+  height: 0;
+  position: relative;
+  left: -700px;
+}

@@ -1,15 +1,14 @@
-import { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import s from './ChartCalendar.module.scss';
 import { DAYS_AMOUNT_DEFAULT, DEF_DATE } from '../../../data/constants';
 import { getMonthDay, getWeekData, getWeekYear, isWeekend } from '../../../utils/dateHelpers';
+import { ChartContext } from '../../../modules/ContextWrapper';
 
 export const ChartCalendar: FC<{ dateStart?: string; daysAmount?: number }> = ({
   dateStart,
   daysAmount,
 }) => {
-  console.log('rerender ChartCalendar');
-  console.log('dateStart', dateStart);
-  console.log('daysAmount', daysAmount);
+  const { scrollRef } = useContext(ChartContext);
   const fixedDate = new Date(dateStart || DEF_DATE); // new Date(dateStart as
   // string);
 
@@ -18,6 +17,7 @@ export const ChartCalendar: FC<{ dateStart?: string; daysAmount?: number }> = ({
 
   return (
     <div className={s.chart_timeline_background}>
+      <div ref={scrollRef} className={s.scroll_ref} />
       <div className={s.timeline_sticky}>
         <div className={s.timeline_weeks}>
           {Array.from({ length: Math.round(fixedDaysAmount / 7) }, (elem, ind) => (

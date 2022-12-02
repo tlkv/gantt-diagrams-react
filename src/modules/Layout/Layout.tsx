@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import s from './Layout.module.scss';
 
 export const Layout: FcWrapper = ({ children }) => {
-  console.log('rerender Layout');
   return (
     <>
       <ToastContainer limit={1} newestOnTop />

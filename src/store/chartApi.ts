@@ -21,13 +21,13 @@ export const chartApi = createApi({
             const result = await fetch(BASE_URL);
             const data: ChartData = await result.json();
             updateCachedData(() => transformCopy(data));
-            // toast.success('Data fetched successfully.', {
-            //   autoClose: TOAST_TIMEOUT,
-            // });
+            toast.success('Data fetched successfully.', {
+              autoClose: TOAST_TIMEOUT,
+            });
           } catch (err) {
-            // toast.info('Request failed. Chart will be filled with mock data.', {
-            //   autoClose: TOAST_TIMEOUT,
-            // });
+            toast.info('Request failed. Chart will be filled with mock data.', {
+              autoClose: TOAST_TIMEOUT,
+            });
           }
         }, 200);
       },

@@ -6,8 +6,6 @@ import s from './ChartPage.module.scss';
 import ErrorBoundary from '../../modules/ErrorBoudary';
 
 const ChartPage: FC = () => {
-  console.log('rerender ChartPage');
-
   return (
     <>
       <ChartHeader />

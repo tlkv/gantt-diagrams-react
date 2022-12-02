@@ -7,7 +7,6 @@ import ErrorBoundary from '../modules/ErrorBoudary';
 import { ContextWrapper } from '../modules/ContextWrapper';
 
 export const App: FC = () => {
-  console.log('rerender App');
   return (
     <StoreWrapper>
       <BrowserRouter>

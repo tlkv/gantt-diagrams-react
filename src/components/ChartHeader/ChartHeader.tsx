@@ -1,19 +1,21 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import { ChartData } from 'data/types';
 import { chartApi, useGetChartQuery } from '../../store/chartApi';
 import s from './ChartHeader.module.scss';
 import { useAppDispatch } from '../../store/hooks';
 import { transformCopy } from '../../store/utils';
 import { RESP_MOCK2, MOCK_DATA_5Y } from '../../data/mockData';
+import { ChartContext } from '../../modules/ContextWrapper';
 
 export const ChartHeader: FC = () => {
-  const { data, refetch } = useGetChartQuery('');
+  const { data } = useGetChartQuery('');
 
-  console.log('rerender ChartHeader', data);
+  const { scrollRef } = useContext(ChartContext);
 
   const dispatch = useAppDispatch();
 
   const handleDataSource = (chartAltData: ChartData) => {
+    scrollRef.current?.scrollIntoView();
     dispatch(chartApi.util.updateQueryData('getChart', '', () => transformCopy(chartAltData)));
   };
 
@@ -32,9 +34,6 @@ export const ChartHeader: FC = () => {
           style={{ fontWeight: 900 }}
           onClick={() => handleDataSource(MOCK_DATA_5Y)}>
           Load data for 5 years
-        </button>
-        <button type="button" className={s.alt_button} onClick={refetch}>
-          Refetch from server
         </button>
         <a
           href={`data:text/json;charset=utf-8,${encodeURIComponent(

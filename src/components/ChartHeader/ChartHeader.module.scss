@@ -12,7 +12,6 @@
 
 .header_title {
   margin: 0;
-
   font-weight: 400;
   font-size: 24px;
   @media (max-width: $breakpoint-sm) {
@@ -24,13 +23,10 @@
 .header_btn {
   @extend %flex-centered !optional;
   position: relative;
-
   width: 101px;
   height: 40px;
   margin-left: 20px;
-
   color: $blue-dark;
-
   background: $color-white;
   border: 1px solid rgb(38 40 66 / 12%);
   border-radius: 10px;
@@ -38,23 +34,18 @@
 
   .btn_text {
     z-index: 1;
-
     display: block;
-
     font-weight: 500;
     font-size: 14px;
   }
 
   &::before {
     z-index: 1;
-
     display: block;
     width: 13px;
     height: 18px;
     margin-right: 10px;
-
     background: url('../../assets/svg/arrow_download_regular.svg') center no-repeat;
-
     content: '';
   }
 
@@ -62,17 +53,13 @@
     position: absolute;
     bottom: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-
     background-color: $background-light;
     border-radius: 10px;
     transform: scaleX(0);
     transform-origin: left;
-
     transition: all 0.3s ease-in-out;
-
     content: '';
   }
 
@@ -90,18 +77,14 @@
 
 .alt_button {
   position: relative;
-
   width: 66px;
   height: 40px;
   margin: 0 4px;
   padding: 2px 4px;
-
   font-size: 10px;
-
   background-color: $color-white;
   border: 1px solid $border-light;
   border-radius: 4px;
-
   transition: all 0.3s ease-in-out;
   @media (max-width: $breakpoint-sm) {
     display: none;

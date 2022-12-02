@@ -1,13 +1,29 @@
 import RESP_MOCK from 'data/mockData';
 import { ChartData, ChartTask } from '../data/types';
 
-export const transformChart = (elem: ChartTask, lvl = 1) => {
-  elem.level = lvl;
-  elem.open = true;
-  elem.subtasks = elem.sub?.length || 0;
-  if (elem?.subtasks) {
-    elem?.sub?.forEach((item) => {
-      transformChart(item, lvl + 1);
+export const transformChart = (
+  { chart, dateStart }: { chart: ChartTask; dateStart?: string },
+  lvl = 1
+) => {
+  chart.level = lvl;
+  chart.open = true;
+  chart.subtasks = chart.sub?.length || 0;
+
+  chart.line_length = Math.round(
+    1 +
+      (new Date(chart.period_end).getTime() - new Date(chart.period_start).getTime()) /
+        (24 * 1000 * 3600)
+  );
+
+  if (dateStart) {
+    chart.offset = Math.round(
+      (new Date(chart.period_start).getTime() - new Date(dateStart).getTime()) / (24 * 1000 * 3600)
+    );
+  }
+
+  if (chart?.subtasks) {
+    chart?.sub?.forEach((item) => {
+      transformChart({ chart: item, dateStart }, lvl + 1);
     });
   }
 };
@@ -25,14 +41,14 @@ export const transformCopy = (data: ChartData): ChartData => {
     );
     newDateEnd.setDate(newDateEnd.getDate() + ((7 - newDateEnd.getDay()) % 7));
     const datesDiff = Math.round(
-      1 + Math.abs(newDateStart.getTime() - newDateEnd.getTime()) / 3600 / 24 / 1000
+      1 + Math.abs(newDateStart.getTime() - newDateEnd.getTime()) / (24 * 1000 * 3600)
     );
 
     deepCopy.dateStart = `${newDateStart.getFullYear()}-${
       newDateStart.getMonth() + 1
     }-${newDateStart.getDate()}`;
     deepCopy.daysAmount = datesDiff;
-    transformChart(deepCopy.chart);
+    transformChart(deepCopy);
     return deepCopy;
   } catch (err) {
     console.error(err);
