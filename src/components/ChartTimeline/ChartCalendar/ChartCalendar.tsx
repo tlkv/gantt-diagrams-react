@@ -9,11 +9,9 @@ export const ChartCalendar: FC<{ dateStart?: string; daysAmount?: number }> = ({
   daysAmount,
 }) => {
   const { scrollRef } = useContext(ChartContext);
-  const fixedDate = new Date(dateStart || DEF_DATE); // new Date(dateStart as
-  // string);
+  const fixedDate = new Date(dateStart || DEF_DATE);
 
-  const fixedDaysAmount = daysAmount || DAYS_AMOUNT_DEFAULT; //  daysAmount as
-  // number;
+  const fixedDaysAmount = daysAmount || DAYS_AMOUNT_DEFAULT;
 
   return (
     <div className={s.chart_timeline_background}>

@@ -53,48 +53,48 @@ export default RESP_MOCK;
 
 export const RESP_MOCK2: ChartData = {
   project: 'DMS 2.0 MOCK',
-  period: '02.08.2022-31.12.2022',
+  period: '10.10.2022-31.12.2022',
   chart: {
     id: 1,
     title: 'Marketing Launch test',
-    period_start: '2022-09-02',
-    period_end: '2022-09-08',
+    period_start: '2022-11-02',
+    period_end: '2022-11-08',
     sub: [
       {
         id: 2,
         title: 'Banners for social networks',
-        period_start: '2022-09-02',
-        period_end: '2022-09-17',
+        period_start: '2022-11-02',
+        period_end: '2022-11-17',
         sub: [
           {
             id: 3,
             title: 'Choosing a platform for ads',
-            period_start: '2022-09-02',
-            period_end: '2022-09-06',
+            period_start: '2022-11-02',
+            period_end: '2022-11-06',
             sub: [
               {
                 id: 9,
                 title: 'Custom issue level #4 2',
-                period_start: '2022-09-02',
-                period_end: '2022-09-07',
+                period_start: '2022-11-02',
+                period_end: '2022-11-07',
               },
               {
                 id: 4,
                 title: 'Custom issue level #4',
-                period_start: '2022-09-03',
-                period_end: '2022-09-05',
+                period_start: '2022-11-03',
+                period_end: '2022-11-05',
                 sub: [
                   {
                     id: 5,
                     title: 'Custom issue level #5',
-                    period_start: '2022-09-04',
-                    period_end: '2022-09-05',
+                    period_start: '2022-11-04',
+                    period_end: '2022-11-05',
                   },
                   {
                     id: 6,
                     title: 'Custom task',
-                    period_start: '2022-09-05',
-                    period_end: '2022-09-05',
+                    period_start: '2022-11-05',
+                    period_end: '2022-11-05',
                   },
                 ],
               },
@@ -103,20 +103,20 @@ export const RESP_MOCK2: ChartData = {
           {
             id: 8,
             title: 'l3',
-            period_start: '2022-09-02',
-            period_end: '2022-09-07',
+            period_start: '2022-11-02',
+            period_end: '2022-11-07',
             sub: [
               {
                 id: 11,
                 title: 'Custom issue level #4',
-                period_start: '2022-09-04',
-                period_end: '2022-09-05',
+                period_start: '2022-11-04',
+                period_end: '2022-11-05',
               },
               {
                 id: 16,
                 title: 'Custom task l4',
-                period_start: '2022-09-05',
-                period_end: '2022-09-05',
+                period_start: '2022-11-05',
+                period_end: '2022-11-05',
               },
             ],
           },
@@ -125,8 +125,8 @@ export const RESP_MOCK2: ChartData = {
       {
         id: 7,
         title: 'LEV2',
-        period_start: '2022-08-02',
-        period_end: '2022-09-07',
+        period_start: '2022-10-12',
+        period_end: '2022-11-07',
       },
     ],
   },

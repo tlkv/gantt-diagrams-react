@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { toast } from 'react-toastify';
 import { ChartData } from '../data/types';
 import { BASE_URL, TOAST_TIMEOUT } from '../data/constants';
-import { MOCK_DATA_5Y } from '../data/mockData';
+import RESP_MOCK from '../data/mockData';
 import { transformCopy } from './utils';
 
 export const chartApi = createApi({
@@ -12,7 +12,7 @@ export const chartApi = createApi({
   endpoints: (builder) => ({
     getChart: builder.query<ChartData, string>({
       queryFn: () => {
-        return { data: transformCopy(MOCK_DATA_5Y) };
+        return { data: transformCopy(RESP_MOCK) };
       },
 
       onCacheEntryAdded(arg, { updateCachedData }) {
