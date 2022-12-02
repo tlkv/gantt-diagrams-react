@@ -8,7 +8,7 @@ export const DEFAULT_STATE: CounterState = {
 
 export const DAYS_AMOUNT_DEFAULT = 120;
 
-export const DEF_DATE = '2022-9-2';
+export const DEF_DATE = '2022-09-02';
 
 export const TOAST_TIMEOUT = 1500;
 

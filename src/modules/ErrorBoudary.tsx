@@ -22,11 +22,12 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    // eslint-disable-next-line no-console
     console.error('Error:', error, errorInfo);
   }
 
   public render() {
-    console.log('rerender ERR');
+    // console.log('rerender ERR');
     // eslint-disable-next-line react/destructuring-assignment
     if (this.state.hasError) {
       return (

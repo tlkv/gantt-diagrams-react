@@ -29,6 +29,7 @@ export const ContextWrapper = ({ children }: { children: ReactNode }) => {
       toggleExpand,
       scrollRef,
     }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [scrollRef]
   );
 

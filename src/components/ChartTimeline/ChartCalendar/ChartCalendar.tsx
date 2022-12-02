@@ -9,7 +9,10 @@ export const ChartCalendar: FC<{ dateStart?: string; daysAmount?: number }> = ({
   daysAmount,
 }) => {
   const { scrollRef } = useContext(ChartContext);
-  const fixedDate = new Date(dateStart || DEF_DATE);
+  const incomingDate = (dateStart || DEF_DATE).split('-').map(Number);
+
+  // fix date for ios
+  const fixedDate = new Date(incomingDate[0], incomingDate[1] - 1, incomingDate[2]);
 
   const fixedDaysAmount = daysAmount || DAYS_AMOUNT_DEFAULT;
 

@@ -51,7 +51,7 @@ export const transformCopy = (data: ChartData): ChartData => {
     transformChart(deepCopy);
     return deepCopy;
   } catch (err) {
-    console.error(err);
+    // console.error(err);
   }
   return transformCopy(RESP_MOCK);
 };
